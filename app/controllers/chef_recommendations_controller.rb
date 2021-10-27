@@ -1,0 +1,2 @@
+class ChefRecommendationsController < ApplicationController
+end

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  background-color: aliceblue;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+.welcome {
+  margin-left: 450px;
+  padding-top: 10px;
+  color: #5F939A;
+}
+
+.food-card {
+  display: inline-block;
+  width: 20%;
+  margin: 50px;
+}
+
+.food-card img {
+  width: 100%;
+}
+
+.col-lg-4 {
+  position: fixed;
+  top: 100px;
+  right: 0;
+}
+
+.pay-method {
+  position: relative;
+  width: 100%;
+}

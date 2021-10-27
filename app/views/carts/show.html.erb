@@ -1,0 +1,137 @@
+
+    <section>
+      <div class="row">
+        <% @cart.line_items.each do |line_item| %>
+
+        <div class="col-lg-8">
+          <div class="card wish-list mb-3">
+            <div class="card-body">
+              <h5 class="mb-4">Cart (<span><%= @cart.line_items.count %></span> items)</h5>
+              <div class="row mb-4">
+                <div class="col-md-5 col-lg-3 col-xl-3">
+                  <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+                      <%= link_to image_tag(line_item.food.image), food_path(line_item.food.id), class: "img-fluid w-100" %>
+                  </div>
+                </div>
+                <div class="col-md-7 col-lg-9 col-xl-9">
+                  <div>
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <h5><%= line_item.food.name %></h5>
+                        <p class="mb-3 text-muted text-uppercase small"></p>
+                        <p class="mb-2 text-muted text-uppercase small"></p>
+                        <p class="mb-3 text-muted text-uppercase small"></p>
+                      </div>
+                      <div>
+                        <div class="def-number-input number-input safari_only mb-0 w-100">
+                          <%= link_to "ADD", line_item_add_path(:id => line_item), :method => "post", :class => "minus" %>
+                          <input class="quantity" min="0" name="quantity" value="<%= line_item.quantity %>" type="number">
+                          <%= link_to "REDUCE", line_item_reduce_path(:id => line_item), :method => "post", :class => "minus" %>
+                        </div>
+                        <small id="passwordHelpBlock" class="form-text text-muted text-center">
+                          (Note, 1 piece)
+                        </small>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <a href="#!" type="button" class="card-link-secondary small text-uppercase mr-3"><i
+                            class="fas fa-trash-alt mr-1"></i> <%= link_to "REMOVE ITEM", line_item_path(line_item), :method => "delete" %> </a>
+                      </div>
+                      <p class="mb-0"><span><strong><%= number_to_currency(line_item.food.price) %></strong></span></p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                      </div>
+                      <p class="mb-0"><span><strong>Sub Total: <%= number_to_currency(line_item.total_price) %></strong></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="mb-4">
+
+              <p class="text-primary mb-0"><i class="fas fa-info-circle mr-1"></i> Do not delay the purchase, adding
+                items to your cart does not mean booking them.</p>
+
+            </div>
+          </div>
+
+        </div>
+        <% end %>
+
+        <div class="col-lg-4">
+          <div class="card mb-3">
+            <div class="card-body">
+
+              <h5 class="mb-3">The total amount of</h5>
+
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                  Temporary amount
+                  <span><%= number_to_currency(@cart.sub_total) %></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                  Shipping
+                  <span>Gratis</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                  <div>
+                    <strong>The total amount of</strong>
+                    <strong>
+                      <p class="mb-0">(including VAT)</p>
+                    </strong>
+                  </div>
+                  <span><strong><%= number_to_currency(@cart.sub_total) %></strong></span>
+                </li>
+              </ul>
+
+              <%= link_to "Proceed to checkout", new_order_path, :class => "btn btn-primary btn-block waves-effect waves-light" %>
+
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <div class="card-body">
+
+              <a class="dark-grey-text d-flex justify-content-between" data-toggle="collapse" href="#collapseExample1"
+                aria-expanded="false" aria-controls="collapseExample1">
+                Add a discount code (optional)
+                <span><i class="fas fa-chevron-down pt-1"></i></span>
+              </a>
+
+              <div class="collapse" id="collapseExample1">
+                <div class="mt-3">
+                  <div class="md-form md-outline mb-0">
+                    <input type="text" id="discount-code1" class="form-control font-weight-light"
+                      placeholder="Enter discount code">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="card mb-3 pay-method">
+      <div class="card-body">
+
+        <h5 class="mb-4">We accept</h5>
+
+        <img class="mr-2" width="45px"
+          src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+          alt="Visa">
+        <img class="mr-2" width="45px"
+          src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+          alt="American Express">
+        <img class="mr-2" width="45px"
+          src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+          alt="Mastercard">
+        <img class="mr-2" width="45px"
+          src="https://sm.pcmag.com/pcmag_uk/review/p/paypal/paypal_kzfp.png"
+          alt="PayPal acceptance mark">
+      </div>
+    </div>
+
+<%= link_to "Empty cart", cart_path(@current_cart), :method => "delete", data: {confirm: "Are you sure?"} %>

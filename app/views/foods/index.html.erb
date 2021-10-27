@@ -1,0 +1,15 @@
+
+<% @foods.each do |food| %>
+  <div class="food-card card" style="width: 18rem;">
+    <%= link_to image_tag(food.image), food, :class => "card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= link_to food.name, food %></h5>
+      <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+              <%= link_to 'View', food, :class=> "btn btn-sm btn-outline-secondary" %>
+          </div>
+          <small class="text-muted">$<%= food.price %></small>
+      </div>
+    </div>
+  </div>
+<% end %>

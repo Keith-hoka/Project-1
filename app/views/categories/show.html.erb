@@ -1,0 +1,13 @@
+<h1><%= @category.title %></h1>
+
+<% @category.foods.each do |food| %>
+  <div class="">
+    <%= link_to image_tag(food.image), food %>
+    <%= link_to food.name, food %>
+  </div>
+<% end %>
+
+<div class="controls">
+  <%= link_to "Edit Category", edit_category_path(@category) %>
+  <%= link_to "Delete Category", @category, :method => "delete", :data => { :confirm => "Are you sure?" }%>
+</div>
