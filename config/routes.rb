@@ -6,14 +6,14 @@ Rails.application.routes.draw do
   resources :orders
   resources :chef_recommendations
 
+  get "/pages/show" => "pages#show"
+
   get "/login" => "session#new"
   post "/login" => "session#create"
   delete "/login" => "session#destroy"
 
-  # get "/foods" => 'foods#index'
-
   get '/cart/:id' => "carts#show", :as => :cart
-  delete '/carts/:id' => "carts#destroy"
+  delete '/cart/:id' => "carts#destroy"
 
   post '/line_items/:id/add' => "line_items#add_quantity", :as => :line_item_add
   post '/line_items/:id/reduce' => "line_items#reduce_quantity", :as => :line_item_reduce

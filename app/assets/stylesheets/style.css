@@ -1,14 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto&display=swap');
+
 
 body {
   background-color: aliceblue;
-  text-align: center;
   font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: white;
+  background-image: url("https://www.fairfaxstatic.com.au/etc/designs/ffx/cq-site-clientlibs-designs-good-food/css/img/gf-social-home.jpg");
+}
+
+h1, h2 {
+  margin-top: 30px;
+  text-align: center;
+}
+
+h5 {
+  font-weight: bolder;
+}
+
+.logo {
+  font-weight: bolder;
   font-size: 20px;
 }
 
+.nav-contact {
+  color: #FF7777;
+}
+
+.user-list {
+  text-align: center;
+}
+
+.contact-form {
+  width: 100vh;
+}
+
+.contact-container {
+  margin-left: 50vh;
+}
+
+.contact-text {
+  font-size: 30px;
+}
+
+.change-name {
+  position: absolute;
+  margin-left: 50%;
+  color: black;
+  z-index: 10;
+}
+
+.text {
+  color: black;
+}
+
+.home {
+  position: relative;
+  text-align: center;
+}
+
+.home-img {
+  z-index: -1;
+}
+
+.all-foods {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Dancing Script', cursive;
+  font-size: 200px;
+}
+
+.all-foods a {
+  text-decoration: none;
+}
+
+.card-container {
+  min-height: 93vh;
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+.checkout-card {
+  z-index: 10;
+  position: relative;
+}
+
+.pay-method {
+  margin-top: auto;
+}
+
 .welcome {
-  margin-left: 450px;
+  margin-left: 50vh;
   padding-top: 10px;
   color: #5F939A;
 }
@@ -23,13 +108,75 @@ body {
   width: 100%;
 }
 
-.col-lg-4 {
+.checkout {
   position: fixed;
   top: 100px;
   right: 0;
+  z-index: 10;
 }
 
 .pay-method {
   position: relative;
   width: 100%;
+  text-align: center;
+}
+
+.empty-cart {
+  width: 150px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.single-food {
+  margin: 50px;
+  text-align: center;
+}
+
+.food_img {
+  width: 400px;
+}
+
+.new_food {
+  text-align: center;
+}
+
+.edit_food {
+  text-align: center;
+}
+
+.controls {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.categories {
+  margin-top: 30px;
+  background: none;
+  color: white;
+}
+
+.edit_category {
+  text-align: center;
+}
+
+.new_category {
+  text-align: center;
+}
+
+.line-item {
+  text-align: center;
+}
+
+.order-list {
+  margin-left: 35%;
+
+}
+
+.order {
+  list-style-type: none;
+  width: 500px;
+}
+
+.new_order {
+  text-align: center;
 }

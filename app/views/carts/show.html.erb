@@ -1,12 +1,13 @@
+<div class="card-container">
 
     <section>
       <div class="row">
-        <% @cart.line_items.each do |line_item| %>
+        <% @cart.line_items.order(:id).each do |line_item| %>
 
-        <div class="col-lg-8">
+        <div class="col-lg-8 line-item">
           <div class="card wish-list mb-3">
             <div class="card-body">
-              <h5 class="mb-4">Cart (<span><%= @cart.line_items.count %></span> items)</h5>
+              <h5 class="mb-4">Cart (<span><%= pluralize @cart.line_items.count, "item" %></span>)</h5>
               <div class="row mb-4">
                 <div class="col-md-5 col-lg-3 col-xl-3">
                   <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
@@ -59,9 +60,9 @@
         </div>
         <% end %>
 
-        <div class="col-lg-4">
+        <div class="col-lg-4 checkout">
           <div class="card mb-3">
-            <div class="card-body">
+            <div class="card-body checkout-card">
 
               <h5 class="mb-3">The total amount of</h5>
 
@@ -113,6 +114,7 @@
       </div>
 
     </section>
+    <%= link_to "Empty Cart", cart_path(@current_cart), :method => "delete", :class => "btn-primary empty-cart", data: {confirm: "Are you sure?"} %>
 
     <div class="card mb-3 pay-method">
       <div class="card-body">
@@ -134,4 +136,4 @@
       </div>
     </div>
 
-<%= link_to "Empty cart", cart_path(@current_cart), :method => "delete", data: {confirm: "Are you sure?"} %>
+    </div>

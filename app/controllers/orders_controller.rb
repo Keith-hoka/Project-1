@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :check_for_login
 
   def index
-    @orders = Order.all # if Order.find params[:user_id] == @current_user.id
+    @orders = @current_user.orders
   end
 
   def show
@@ -20,9 +20,10 @@ class OrdersController < ApplicationController
       item.update(cart_id: nil)
     end
     @order.save
+    @current_user.orders << @order
     Cart.destroy(session[:cart_id])
     session[:cart_id] = nil
-    redirect_to foods_path
+    redirect_to orders_path
   end
 
   private

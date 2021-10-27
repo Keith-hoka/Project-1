@@ -11,5 +11,5 @@
   <%= f.label :category_id %>
   <%= f.select :category_id, Category.pluck(:title, :id), :include_blank => true %>
 
-  <%= f.submit %>
+  <%= f.submit nil, :class=>"btn btn-primary" %>
 <% end %>

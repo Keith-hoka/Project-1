@@ -1,12 +1,22 @@
 <h1>All Orders</h1>
 
 <% @orders.each do |order| %>
-  <p>Name: <%= order.name %></p>
-  <p>Email: <%= order.email %></p>
-  <p>Line Items: </p>
-  <ul>
-    <% order.line_items.each do |item| %>
-    <li><%= item.quantity %> x <%= item.food.name %></li>
-    <% end %>
-  </ul>
+
+<ul class="order-list">
+  <li class="order">
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action active">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Name: <%= order.name %></h5>
+        </div>
+        <p class="mb-1">Email: <%= order.email %></p>
+        <p>Order Items: </p>
+        <% order.line_items.each do |item| %>
+        <small><%= item.quantity %> x <%= item.food.name %></small><br>
+        <% end %>
+      </a>
+    </div>
+  </li>
+</ul>
+
 <% end %>

@@ -1,13 +1,29 @@
-<h1><%= @category.title %></h1>
 
-<% @category.foods.each do |food| %>
-  <div class="">
-    <%= link_to image_tag(food.image), food %>
-    <%= link_to food.name, food %>
+<div class="single-category">
+  <h1 class=""><%= @category.title %></h1>
+
+  <% @category.foods.each do |food| %>
+
+  <div class="food-card card" style="width: 18rem;">
+    <%= link_to image_tag(food.image), food, :class => "card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= link_to food.name, food %></h5>
+      <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+              <%= link_to 'View', food, :class=> "btn btn-sm btn-outline-secondary" %>
+          </div>
+          <small class="text-muted">$<%= food.price %></small>
+      </div>
+    </div>
   </div>
-<% end %>
 
-<div class="controls">
-  <%= link_to "Edit Category", edit_category_path(@category) %>
-  <%= link_to "Delete Category", @category, :method => "delete", :data => { :confirm => "Are you sure?" }%>
+  <% end %>
+
+  <div class="controls">
+    <% if @current_user.present? && @current_user.admin? %>
+    <%= link_to "Edit Category", edit_category_path(@category), :class=>"btn btn-sm btn-outline-secondary" %>
+    <%= link_to "Delete Category", @category, :method => "delete", :class=>"btn btn-sm btn-outline-secondary", :data => { :confirm => "Are you sure?" }%>
+    <% end %>
+  </div>
+
 </div>
