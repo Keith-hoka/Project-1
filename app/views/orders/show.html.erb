@@ -10,15 +10,15 @@
   <div class="card-body pay-card-body">
     <h5 class="card-title">Your Order Details</h5>
     <h6 class="card-subtitle mb-2 text-muted">Order Items:</h6>
-    <% total = 0 %>
+    <% @total = 0 %>
     <% @order.line_items.each do |line_item| %>
     <% unit_price = line_item.food.price %>
     <% quantity = line_item.quantity %>
     <% subtotal = unit_price * quantity %>
-    <% total = total + subtotal %>
+    <% @total = @total + subtotal %>
     <p class="card-text"> <%= line_item.food.name %>: $<%= line_item.food.price %> X <%= line_item.quantity %> = $<%= subtotal %></p>
     <% end %>
-    <span>Total Amount: $ <%= total %> </span>
+    <span>Total Amount: $ <%= @total %> </span>
 
     <a href="#" class="card-link">
       <%= form_tag charges_path do %>
@@ -30,7 +30,7 @@
               <% end %>
           </article>
 
-          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Pay your order" data-amount="<%= total * 100 %>" data-billing-address="true" data-shipping-address="true" data-locale="auto" data-label="Buy Now!"></script>
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Pay your order" data-amount="<%= @total * 100 %>" data-billing-address="true" data-shipping-address="true" data-locale="auto" data-label="Buy Now!"></script>
       <% end %>
     </a>
   </div>
