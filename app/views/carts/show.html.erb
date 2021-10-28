@@ -86,6 +86,7 @@
                 </li>
               </ul>
                 <%= link_to "Proceed to checkout", new_order_path, :class => "btn btn-primary btn-block waves-effect waves-light" %>
+                <%= link_to "Empty Cart", cart_path(@current_cart), :method => "delete", :class => "btn btn-primary btn-block waves-effect waves-light", data: {confirm: "Are you sure?"} %>
             </div>
           </div>
 
@@ -112,7 +113,7 @@
       </div>
 
     </section>
-    <%= link_to "Empty Cart", cart_path(@current_cart), :method => "delete", :class => "btn-primary empty-cart", data: {confirm: "Are you sure?"} %>
+
 
     <div class="card mb-3 pay-method">
       <div class="card-body">

@@ -3,5 +3,5 @@
 <h2><%= User.count %> users</h2>
 
 <% @users.each do |user| %>
-     <p class="user-list"><%= user.name %></p>
+     <p class="user-list">Name: <%= user.name %>, Email: <%= user.email %></p>
 <% end %>

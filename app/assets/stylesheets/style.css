@@ -30,7 +30,7 @@ h5 {
 
 .user-list {
   text-align: center;
-  color: #5F939A;
+  color: #E02401;
   font-size: 30px;
 }
 
@@ -185,19 +185,25 @@ h5 {
   width: 500px;
 }
 
-.new_order {
+.new_order, .edit_food {
   text-align: center;
   color: #FED2AA;
 }
 
-.pay-card {
-  color: black;
-  margin-left: 35%;
-  width: 500px;
+.new_food, .edit_food {
+  text-align: left;
+  color: #FED2AA;
+  margin-left: 40%;
 }
 
-.order-details {
-  margin-left: 40%;
+.new-food-btn {
+  margin-left: 10%;
+}
+
+.pay-card {
+  color: black;
+  margin-left: 30%;
+  width: 500px;
 }
 
 .stripe-button-el {
