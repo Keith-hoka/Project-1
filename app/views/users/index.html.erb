@@ -1,7 +1,7 @@
 <h1>All Users</h1>
 
 <h2><%= User.count %> users</h2>
-   <% @users.each do |user| %>
-     <p class="user-list"><%= link_to user.name, user %></p>
 
+<% @users.each do |user| %>
+     <p class="user-list"><%= user.name %></p>
 <% end %>

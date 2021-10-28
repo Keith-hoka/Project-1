@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :foods
   resources :orders
   resources :chef_recommendations
+  resources :charges
 
   get "/pages/show" => "pages#show"
 
