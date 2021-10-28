@@ -9,11 +9,8 @@
     <h6 class="card-subtitle mb-2 text-muted">Order Items:</h6>
     <% @total = 0 %>
     <% @order.line_items.each do |line_item| %>
-    <% unit_price = line_item.food.price %>
-    <% quantity = line_item.quantity %>
-    <% subtotal = unit_price * quantity %>
-    <% @total = @total + subtotal %>
-    <p class="card-text"> <%= line_item.food.name %>: $<%= line_item.food.price %> X <%= line_item.quantity %> = $<%= subtotal %></p>
+    <% @total = @total + line_item.total_price %>
+    <p class="card-text"> <%= line_item.food.name %>: $<%= line_item.food.price %> X <%= line_item.quantity %> = $<%= line_item.total_price%></p>
     <% end %>
     <span>Total Amount: $ <%= @total %> </span>
 
