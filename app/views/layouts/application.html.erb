@@ -44,7 +44,9 @@
              <%= link_to "All Orders", orders_path, :class=>"nav-link", :class => "btn btn-light" %>
            </li>
 
-           <p class="welcome">Welcome back <%= @current_user.name %> !</p>
+           <% if @current_user.present? %>
+             <p class="welcome">Welcome back <%= @current_user.name || @current_user.email %></p>
+           <% end %>
          <% else %>
 
          <% end %>
