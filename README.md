@@ -1,24 +1,23 @@
-# README
+# Project 1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Food Shopping Website based Ruby on Rails
 
-Things you may want to cover:
+This is a simple food shopping website with some functionality, like User Authentication(Sign up / Login), Shopping Cart, Placing Orders and Payment via Credit Card.
 
-* Ruby version
+Here is the link to the live site for [Food Shopping App](https://foodshoppingapp.herokuapp.com/).
 
-* System dependencies
+## Introduction
 
-* Configuration
+This game was created by HTML, CSS, Ruby on Rails based on Postgres SQLite Backend Database. Bootstrap and Stripe API are also involved.
 
-* Database creation
+## Features
 
-* Database initialization
+This eCommerce website can let you browse and purchase foods from all over the world! You can apply for an account, put ordered foods in shopping cart, place orders and finish your payment for your orders. All your data will be safely stored on the backend database! Don't worry data breach!
 
-* How to run the test suite
+So far, this eCommerce website is for test ONLY, please do not share your real Credit Card info.
 
-* Services (job queues, cache servers, search engines, etc.)
+Please use demo Credit Card for test, Card NO.: 4242 4242 4242 4242
 
-* Deployment instructions
+### Special thanks
 
-* ...
+Rowena and Pat, you are awesome and thank you so much for giving me some precious feedbacks.
