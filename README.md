@@ -6,9 +6,9 @@ This is a simple food shopping website with some functionality, like User Authen
 
 Here is the link to the live site for [Food Shopping App](https://foodshoppingapp.herokuapp.com/).
 
-## Introduction
+## Tech Stack
 
-This game was created by HTML, CSS, Ruby on Rails based on Postgres SQLite Backend Database. Bootstrap and Stripe API are also involved.
+HTML, CSS, Ruby on Rails based on Postgres SQLite Backend Database, Bootstrap and Stripe API.
 
 ## Features
 
