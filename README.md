@@ -8,7 +8,7 @@ Here is the link to the live site for [Food Shopping App](https://foodshoppingap
 
 ## Tech Stack
 
-HTML, CSS, Ruby on Rails based on Postgres SQLite Backend Database, Bootstrap and Stripe API.
+HTML, CSS, Ruby on Rails based on PostgresSQL Backend Database, Bootstrap and Stripe API.
 
 ## Features
 
